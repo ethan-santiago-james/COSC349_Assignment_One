@@ -1,0 +1,19 @@
+{
+  "name": "collaborate_api",
+  "version": "1.0.0",
+  "description": "REST API for Collaborate app",
+  "license": "ISC",
+  "author": "Ethan James",
+  "type": "commonjs",
+  "main": "express.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "pg": "^8.23.0"
+  }
+}
