@@ -23,7 +23,7 @@ export default function SignUpScreen() {
     setSuccess('');
 
     try {
-      const response = await fetch('http://localhost:3000/signup', {
+      const response = await fetch('http://192.168.56.11:3000/signup', {
         method: 'POST',
         mode: 'cors',
         headers: {

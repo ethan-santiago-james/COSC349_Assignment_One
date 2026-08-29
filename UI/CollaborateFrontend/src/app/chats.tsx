@@ -55,7 +55,7 @@ export function ChatList({
     async function fetchConnections() {
       try {
         const response = await fetch(
-          `http://localhost:3000/user_connections?username=${encodeURIComponent(
+          `http://192.168.56.11:3000/user_connections?username=${encodeURIComponent(
             username
           )}`
         );

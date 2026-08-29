@@ -31,7 +31,7 @@ const navigationItems = [
 ] as const;
 
   async function createUserConnection(usernameOne: string, usernameTwo: string) {
-    const response = await fetch('http://localhost:3000/user_connection/', {
+    const response = await fetch('http://192.168.56.11:3000/user_connection/', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

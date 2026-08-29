@@ -2,12 +2,12 @@ const { Pool } = require('pg');
 const bcrypt = require('bcryptjs');
 
 const pool = new Pool({
-	host: 'localhost',
-	port: 5432,
-	database: 'postgres',
-	user: 'postgres',
-	password: 'postgres',
-	options: '-c search_path=collaborate',
+    host: '192.168.56.12',
+    port: 5432,
+    database: 'postgres',
+    user: 'postgres',
+    password: 'postgres',
+    options: '-c search_path=collaborate',
 });
 
 

@@ -1,3 +1,8 @@
+DROP TABLE IF EXISTS Chat CASCADE;
+DROP TABLE IF EXISTS User_Connection CASCADE;
+DROP TABLE IF EXISTS Meet_Request CASCADE;
+DROP TABLE IF EXISTS Collaborate_User CASCADE;
+
 CREATE TABLE Collaborate_User (
     First_Name VARCHAR(100) NOT NULL,
     Last_Name VARCHAR(100) NOT NULL,
@@ -14,10 +19,10 @@ CREATE TABLE Meet_Request (
     Status CHAR(1) DEFAULT 'P',
 
     CONSTRAINT Sender_FK
-        FOREIGN KEY (Sender) REFERENCES User(Username),
+        FOREIGN KEY (Sender) REFERENCES Collaborate_User(Username),
 
     CONSTRAINT Receiver_FK
-        FOREIGN KEY (Receiver) REFERENCES User(Username)
+        FOREIGN KEY (Receiver) REFERENCES Collaborate_User(Username)
 );
 
 CREATE TABLE User_Connection (
@@ -31,10 +36,10 @@ CREATE TABLE User_Connection (
         PRIMARY KEY (Username_One, Username_Two),
 
     CONSTRAINT Username_One_FK
-        FOREIGN KEY (Username_One) REFERENCES User(Username),
+        FOREIGN KEY (Username_One) REFERENCES Collaborate_User(Username),
 
     CONSTRAINT Username_Two_FK
-        FOREIGN KEY (Username_Two) REFERENCES User(Username)
+        FOREIGN KEY (Username_Two) REFERENCES Collaborate_User(Username)
 );
 
 CREATE TABLE Chat (
@@ -44,8 +49,8 @@ CREATE TABLE Chat (
     Content TEXT NOT NULL,
 
     CONSTRAINT From_User_FK
-        FOREIGN KEY (From_User) REFERENCES User(Username),
+        FOREIGN KEY (From_User) REFERENCES Collaborate_User(Username),
 
     CONSTRAINT To_User_FK
-        FOREIGN KEY (To_User) REFERENCES User(Username)
+        FOREIGN KEY (To_User) REFERENCES Collaborate_User(Username)
 );

@@ -49,7 +49,7 @@ export default function ChatScreen() {
         const currentUsername = getUsername();
 
         const response = await fetch(
-          `http://localhost:3000/chats?usernameOne=${encodeURIComponent(
+          `http://192.168.56.11:3000/chats?usernameOne=${encodeURIComponent(
             currentUsername
           )}&usernameTwo=${encodeURIComponent(chatUsername)}`
         );
@@ -100,7 +100,7 @@ async function sendMessage() {
   }
 
   try {
-    const response = await fetch('http://localhost:3000/chat', {
+    const response = await fetch('http://192.168.56.11:3000/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

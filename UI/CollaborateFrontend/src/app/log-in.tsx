@@ -27,7 +27,7 @@ export default function LogInScreen() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('http://192.168.56.11:3000/login', {
         method: 'POST',
         mode: 'cors',
         headers: {

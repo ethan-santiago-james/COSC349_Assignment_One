@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Install Node.js and npm
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Verify installation
+node --version
+npm --version
+npx --version
+
+# Install dependencies
+cd /vagrant/REST_API
+npm install
+
+# Start REST API
+node express.js
