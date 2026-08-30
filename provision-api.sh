@@ -1,17 +1,36 @@
-#!/bin/bash
+```bash
+#!/usr/bin/env bash
+set -e
 
+# -------------------------
+# Install Docker
+# -------------------------
+apt-get update
+apt-get install -y docker.io
+
+systemctl enable docker
+systemctl start docker
+
+
+# -------------------------
 # Install Node.js and npm
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
+# -------------------------
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+apt-get install -y nodejs
 
+
+# -------------------------
 # Verify installation
+# -------------------------
 node --version
 npm --version
-npx --version
 
-# Install dependencies
+
+# -------------------------
+# Install API dependencies
+# -------------------------
 cd /vagrant/REST_API
+
 npm install
 
-# Start REST API
-node express.js
+```

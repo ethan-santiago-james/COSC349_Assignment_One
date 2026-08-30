@@ -4,10 +4,10 @@ const bcrypt = require('bcryptjs');
 const pool = new Pool({
     host: '192.168.56.12',
     port: 5432,
-    database: 'postgres',
+    database: 'appdb',
     user: 'postgres',
     password: 'postgres',
-    options: '-c search_path=collaborate',
+   // options: '-c search_path=collaborate',
 });
 
 

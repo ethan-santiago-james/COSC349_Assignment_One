@@ -1,18 +1,11 @@
-#!/bin/bash
+```bash
+#!/usr/bin/env bash
 
-# Install Node.js and npm
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo apt-get update
-sudo apt-get install -y libatk1.0-0
-# Verify installation
-node --version
-npm --version
-npx --version
+sudo apt update
+sudo apt install -y curl
 
-# Install frontend dependencies
+curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
+sudo apt install -y nodejs
 cd /vagrant/UI/CollaborateFrontend
 npm install
-
-# Start Expo
-npx expo start
+```

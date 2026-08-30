@@ -1,3 +1,4 @@
+
 DROP TABLE IF EXISTS Chat CASCADE;
 DROP TABLE IF EXISTS User_Connection CASCADE;
 DROP TABLE IF EXISTS Meet_Request CASCADE;
@@ -54,3 +55,121 @@ CREATE TABLE Chat (
     CONSTRAINT To_User_FK
         FOREIGN KEY (To_User) REFERENCES Collaborate_User(Username)
 );
+
+
+-- =========================================================
+-- TEST USERS
+-- =========================================================
+
+INSERT INTO Collaborate_User
+    (First_Name, Last_Name, Username, Password, Meetup_Points)
+VALUES
+    ('Ethan', 'James', 'ethan', 'password123', 120),
+    ('Alice', 'Smith', 'alice', 'password123', 85),
+    ('Ben', 'Wilson', 'ben', 'password123', 60),
+    ('Charlie', 'Brown', 'charlie', 'password123', 150),
+    ('Daisy', 'Taylor', 'daisy', 'password123', 40),
+    ('Jack', 'Anderson', 'jack', 'password123', 95),
+    ('Sophie', 'Martin', 'sophie', 'password123', 75),
+    ('Oliver', 'Thompson', 'oliver', 'password123', 110),
+    ('Mia', 'Robinson', 'mia', 'password123', 55),
+    ('Noah', 'Harris', 'noah', 'password123', 30);
+
+
+-- =========================================================
+-- TEST MEET REQUESTS
+-- P = Pending
+-- A = Accepted
+-- R = Rejected
+-- =========================================================
+
+INSERT INTO Meet_Request
+    (Sender, Receiver, Time_Of_Send, Status)
+VALUES
+    ('alice', 'ethan', '2026-08-20 10:30:00', 'A'),
+    ('ethan', 'ben', '2026-08-21 14:15:00', 'A'),
+    ('charlie', 'ethan', '2026-08-22 09:45:00', 'P'),
+    ('daisy', 'ethan', '2026-08-23 16:20:00', 'P'),
+    ('jack', 'alice', '2026-08-21 11:10:00', 'A'),
+    ('sophie', 'alice', '2026-08-24 13:30:00', 'P'),
+    ('oliver', 'ben', '2026-08-19 15:00:00', 'R'),
+    ('mia', 'charlie', '2026-08-25 17:45:00', 'A'),
+    ('noah', 'ethan', '2026-08-26 12:00:00', 'P'),
+    ('ben', 'daisy', '2026-08-27 09:20:00', 'R');
+
+
+-- =========================================================
+-- TEST USER CONNECTIONS
+-- =========================================================
+
+INSERT INTO User_Connection
+    (Username_One, Username_Two, Time_Of_Last_Call, Time_Of_Last_Meet)
+VALUES
+    ('ethan', 'alice', '2026-08-25 18:30:00', '2026-08-24 12:00:00'),
+    ('ethan', 'ben', '2026-08-26 19:00:00', '2026-08-25 13:30:00'),
+    ('ethan', 'charlie', '2026-08-27 17:15:00', '2026-08-26 11:00:00'),
+    ('alice', 'jack', '2026-08-24 20:00:00', '2026-08-23 14:00:00'),
+    ('charlie', 'mia', '2026-08-26 16:45:00', '2026-08-25 15:30:00'),
+    ('ben', 'daisy', '2026-08-22 18:00:00', '2026-08-21 10:30:00'),
+    ('alice', 'sophie', '2026-08-27 19:30:00', '2026-08-26 13:00:00'),
+    ('ben', 'oliver', '2026-08-28 12:15:00', '2026-08-27 16:00:00');
+
+
+-- =========================================================
+-- TEST CHAT MESSAGES
+-- =========================================================
+
+INSERT INTO Chat
+    (From_User, To_User, Time_Of_Send, Content)
+VALUES
+    ('alice', 'ethan', '2026-08-24 11:30:00',
+        'Hey Ethan, are you free to meet up sometime this week?'),
+
+    ('ethan', 'alice', '2026-08-24 11:35:00',
+        'Yeah, definitely! How about tomorrow afternoon?'),
+
+    ('alice', 'ethan', '2026-08-24 11:40:00',
+        'Sounds good. How about 2pm?'),
+
+    ('ethan', 'alice', '2026-08-24 11:42:00',
+        'Perfect, see you then!'),
+
+    ('ethan', 'ben', '2026-08-25 13:00:00',
+        'Hey Ben, want to grab a coffee sometime?'),
+
+    ('ben', 'ethan', '2026-08-25 13:05:00',
+        'Sure! I am free tomorrow morning.'),
+
+    ('ethan', 'ben', '2026-08-25 13:10:00',
+        'Awesome, lets meet at the cafe on campus.'),
+
+    ('charlie', 'ethan', '2026-08-26 09:15:00',
+        'Hey, I saw your profile. Would you like to connect?'),
+
+    ('ethan', 'charlie', '2026-08-26 09:20:00',
+        'Yeah, sounds good! What are you studying?'),
+
+    ('charlie', 'ethan', '2026-08-26 09:25:00',
+        'Computer Science. I am working on a group project at the moment.'),
+
+    ('ethan', 'charlie', '2026-08-26 09:30:00',
+        'Nice, I am doing Software Engineering.'),
+
+    ('jack', 'alice', '2026-08-23 14:00:00',
+        'Are you still interested in meeting this weekend?'),
+
+    ('alice', 'jack', '2026-08-23 14:05:00',
+        'Yep! Saturday works for me.'),
+
+    ('mia', 'charlie', '2026-08-25 15:30:00',
+        'Want to catch up after class?'),
+
+    ('charlie', 'mia', '2026-08-25 15:35:00',
+        'Absolutely. I will message you when I finish.'),
+
+    ('ben', 'daisy', '2026-08-27 09:20:00',
+        'Hey Daisy!'),
+
+    ('daisy', 'ben', '2026-08-27 09:25:00',
+        'Hi Ben!');
+
