@@ -4,6 +4,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/jammy64"
   config.ssh.insert_key = true
   
+  config.vm.boot_timeout = 1000
   # -------------------------
   # VM 3: Database
   # -------------------------
@@ -46,8 +47,8 @@ Vagrant.configure("2") do |config|
     web.vm.network "private_network",
       ip: "192.168.56.10"
 
-    web.vm.synced_folder "./UI",
-    "/vagrant/UI"
+    web.vm.synced_folder "./vue-frontend",
+    "/vagrant/vue-frontend"
   end
 
 end

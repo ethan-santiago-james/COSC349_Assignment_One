@@ -1,6 +1,6 @@
 # COSC349 Assignment 1 - Local Virtualised Application
 
-## Application Name: Basic Chat Application
+## Application Name: Collaborate (Basic Chat Application)
 
 ### Purpose: To allow users to request to meet other people, and message them
 
@@ -32,38 +32,23 @@ SQL queries to the DB server VM)
 - Windows 11
 - VirtualBox Version 7.2.14
 - Vagrant 2.4.9
+- All other appropriate versioned tools are installed with the start.sh script
 
 ## Startup Command
 
-- Run ./start.sh in target directory
+- Run chmod +x start.sh in Collaborate directory
+- Run bash -x ./start.sh in target directory to see log output as VMs are being booted up
 
 ## Deployment Verification
 
 - vagrant status (check if three virtual machines are running)
-
-- SSH into an individual VM to verify its services:
-
-- vagrant ssh db
-- vagrant ssh api
-- vagrant ssh web
+- Access 192.168.56.11:3000 on a web browser, and see if you see a page saying "Collaborate API is Running"
+- Access the web application at 192.168.56.10:5173, and see if you are presented with the Collaborate home page
 
 ## Destroy Command
 
 - Run vagrant destroy in terminal
 
-## How to reach application
+## How to reach application for use
 
-- Yet to be filled
-
-
-### Web Key
-
-- Run vagrant ssh-config web
-- The keys being used to SSH into the VM are listed under the "IdentityFile" header
-- Test that you can SSH into the VM using either key (i.e ssh -i {absolute_path_of_key} -p 2222 vagrant@127.0.0.1)
-- If you get WARNING: UNPROTECTED PRIVATE KEY FILE! do the following
-- Open Powershell as administrator and run
-- icacls "$env:USERPROFILE\.vagrant.d\insecure_private_keys\vagrant.key.rsa" /inheritance:r
-- icacls "$env:USERPROFILE\.vagrant.d\insecure_private_keys\vagrant.key.rsa" /remove [recommended user to remove]
-- icacls "$env:USERPROFILE\.vagrant.d\insecure_private_keys\vagrant.key.rsa" /grant "${env:USERNAME}:F"
-
+- Access the web application at 192.168.56.10:5173, and verify the user stories that way

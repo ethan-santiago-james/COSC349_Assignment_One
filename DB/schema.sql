@@ -30,8 +30,8 @@ CREATE TABLE User_Connection (
     Username_One VARCHAR(100) NOT NULL,
     Username_Two VARCHAR(100) NOT NULL,
 
-    Time_Of_Last_Call TIMESTAMP NOT NULL,
-    Time_Of_Last_Meet TIMESTAMP NOT NULL,
+    Time_Of_Last_Call TIMESTAMP,
+    Time_Of_Last_Meet TIMESTAMP,
 
     CONSTRAINT User_Connection_PK
         PRIMARY KEY (Username_One, Username_Two),
