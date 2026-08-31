@@ -12,6 +12,7 @@
 - As a user, I can click the notification bell to see who has requested to meet me
 - As a user, I can click the "Chats" screen to see all my friends who I can chat with
 - As a user, I can send messages to my all my friends in the chat section
+- Go to the "Functionality to Test" section at the bottom of file to test the application after startup
 
 ### Application Architecture
 
@@ -29,7 +30,7 @@ SQL queries to the DB server VM)
 
 ## Supported host environment, and supported tools
 
-- Windows 11
+- Windows 11 
 - VirtualBox Version 7.2.14
 - Vagrant 2.4.9
 - All other appropriate versioned tools are installed with the start.sh script
@@ -43,12 +44,26 @@ SQL queries to the DB server VM)
 
 - vagrant status (check if three virtual machines are running)
 - Access 192.168.56.11:3000 on a web browser, and see if you see a page saying "Collaborate API is Running"
+- If you can successfully register an account, and login, it means that the database VM is functional
 - Access the web application at 192.168.56.10:5173, and see if you are presented with the Collaborate home page
 
 ## Destroy Command
 
-- Run vagrant destroy in terminal
+- Run vagrant destroy in Collaborate directory
 
 ## How to reach application for use
 
 - Access the web application at 192.168.56.10:5173, and verify the user stories that way
+
+## Functionality to test
+
+- Register two users on separate web browsers (this is important as a logged in user is stored in browser storage)
+- Log into both accounts on the separate browsers
+- On each account, you should see up to five users that you can request to meet (this is dummy data)
+- On one of the accounts, keep refreshing the page until you see the other account that you 
+registered with on the other browser
+- Click "Request To Meet" once you see that user
+- On the page of the other user, you should see a notification bell with one notification, click on it
+- Accept the request from the other user
+- On both user accounts, click on the Chats page at the bottom of the screen
+- Verify that the two users can send messages to one another
