@@ -15,7 +15,7 @@
 
 ### Application Architecture
 
-- Front End User Interface VM (Expo Go/React Native Mobile Application that can be accessed via web, and interacts with the API server VM by sending requests)
+- Front End User Interface VM (Vue Front End Web Application that can be accessed via web, and interacts with the API server VM by sending requests)
 - API Server (Receives HTTP requests from the frontend VM such as a POST to the /chats endpoint which would represent a user aiming to send a message to another. It writes raw 
 SQL queries to the DB server VM)
 - DB Server (Data storage for the relational PostgreSQL database. For instance, it persistently stores all the "friendships" between users who have accepted each others meet requests. The DB server receives raw SQL queries from the API server VM to request/insert data)
@@ -23,10 +23,15 @@ SQL queries to the DB server VM)
 ### Purpose of each provisioning, virtualisation, or packaging tool
 
 - VirtualBox (must install to use) (virtualisation tool that lets you run multiple operating systems on the same computer, needed to boot the frontend, API, and database VM)
+- Vagrant (must install to use) (tool that allows a developer to set up and configure different VMs that are physically booted up by VirtualBox. In this case, it allowed me to specify what packages, and code folders should be stored within each VM)
 - Shell (provisioning tool that allows each VM to install necessary dependencies to run such as the DB VM being able to install PostgreSQL to store necessary data)
 - NPM (packaging tool used in provisioning scripts to install dependencies. For instance, it is used by the API VM to install the Express package)
-- NPX (packaging, and runtime tool used for the UI VM to run the Expo application that 
-contains the UI that the user interacts with to make requests)
+
+## Supported host environment, and supported tools
+
+- Windows 11
+- VirtualBox Version 7.2.14
+- Vagrant 2.4.9
 
 ## Startup Command
 
@@ -34,9 +39,7 @@ contains the UI that the user interacts with to make requests)
 
 ## Deployment Verification
 
-- Check that all virtual machines are running:
-
-- vagrant status
+- vagrant status (check if three virtual machines are running)
 
 - SSH into an individual VM to verify its services:
 
@@ -48,10 +51,10 @@ contains the UI that the user interacts with to make requests)
 
 - Run vagrant destroy in terminal
 
-## Deployment and System Requirements
+## How to reach application
 
+- Yet to be filled
 
-## Troubleshooting
 
 ### Web Key
 

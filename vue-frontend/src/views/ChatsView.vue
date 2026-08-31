@@ -1,0 +1,6 @@
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'; import { api, type User } from '../services/api'; import { getUsername } from '../services/session'; import AppNav from '../components/AppNav.vue';
+const connections = ref<User[]>([]); const loading = ref(true); const error = ref('');
+onMounted(async () => { try { connections.value = await api.connections(getUsername()); } catch { error.value = 'Could not load chats.'; } finally { loading.value = false; } });
+</script>
+<template><section class="page"><header class="page-header"><div><p class="eyebrow">Collaborate</p><h1>Chats</h1></div><RouterLink class="text-link" to="/dashboard">← People</RouterLink></header><p v-if="error" class="error">{{ error }}</p><p v-else-if="loading" class="muted">Loading…</p><div v-else-if="connections.length" class="card-list"><RouterLink v-for="connection in connections" :key="connection.username" class="card chat-link" :to="`/chat/${encodeURIComponent(connection.username)}`"><div class="avatar">{{ connection.username.slice(0, 2).toUpperCase() }}</div><div class="grow"><strong>@{{ connection.username }}</strong><p class="muted">Tap to open chat</p></div><span>›</span></RouterLink></div><div v-else class="empty"><div class="empty-icon">💬</div><h2>No chats yet</h2><p class="muted">Connect with someone to start a conversation.</p></div><AppNav /></section></template>

@@ -6,7 +6,18 @@ const { signUpUser, authenticateUser, fetchFiveRandomUsers, createMeetRequest, g
 const app = express();
 const port = 3000;
 
-app.use(cors({ origin: 'http://localhost:8081' }));
+const allowedOrigins = (process.env.FRONTEND_ORIGINS ??
+    'http://localhost:8081,http://localhost:5173,http://192.168.56.10:5173')
+    .split(',')
+    .map((origin) => origin.trim());
+
+app.use(cors({
+    origin(origin, callback) {
+        // Requests without an Origin header (for example curl) remain available for API checks.
+        if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+        return callback(new Error(`Origin ${origin} is not allowed by CORS`));
+    },
+}));
 app.use(express.json());
 
 app.get('/', (request, response) => {
