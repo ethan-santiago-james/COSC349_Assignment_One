@@ -61,19 +61,41 @@ CREATE TABLE Chat (
 -- TEST USERS
 -- =========================================================
 
+-- All test users have the password: password123
+-- Passwords below are stored as bcrypt hashes.
+
 INSERT INTO Collaborate_User
     (First_Name, Last_Name, Username, Password, Meetup_Points)
 VALUES
-    ('Ethan', 'James', 'ethan', 'password123', 120),
-    ('Alice', 'Smith', 'alice', 'password123', 85),
-    ('Ben', 'Wilson', 'ben', 'password123', 60),
-    ('Charlie', 'Brown', 'charlie', 'password123', 150),
-    ('Daisy', 'Taylor', 'daisy', 'password123', 40),
-    ('Jack', 'Anderson', 'jack', 'password123', 95),
-    ('Sophie', 'Martin', 'sophie', 'password123', 75),
-    ('Oliver', 'Thompson', 'oliver', 'password123', 110),
-    ('Mia', 'Robinson', 'mia', 'password123', 55),
-    ('Noah', 'Harris', 'noah', 'password123', 30);
+    ('Ethan', 'James', 'ethan',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 120),
+
+    ('Alice', 'Smith', 'alice',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 85),
+
+    ('Ben', 'Wilson', 'ben',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 60),
+
+    ('Charlie', 'Brown', 'charlie',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 150),
+
+    ('Daisy', 'Taylor', 'daisy',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 40),
+
+    ('Jack', 'Anderson', 'jack',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 95),
+
+    ('Sophie', 'Martin', 'sophie',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 75),
+
+    ('Oliver', 'Thompson', 'oliver',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 110),
+
+    ('Mia', 'Robinson', 'mia',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 55),
+
+    ('Noah', 'Harris', 'noah',
+     '$2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 30);
 
 
 -- =========================================================

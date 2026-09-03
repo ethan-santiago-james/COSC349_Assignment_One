@@ -2,6 +2,9 @@
 # Exit immediately if any command fails
 set -e
 
+# Clean up any existing VMs to ensure a fresh start
+vagrant destroy -f web app db
+
 # ==========================================
 # 1. SET UP WEB VM (Frontend)
 # ==========================================

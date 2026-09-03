@@ -12,21 +12,30 @@
 - As a user, I can click the notification bell to see who has requested to meet me
 - As a user, I can click the "Chats" screen to see all my friends who I can chat with
 - As a user, I can send messages to my all my friends in the chat section
+- As a user, I can log out of the application
 - Go to the "Functionality to Test" section at the bottom of file to test the application after startup
 
 ### Application Architecture
 
-- Front End User Interface VM (Vue Front End Web Application that can be accessed via web, serves dynamic web content to the user, and interacts with the API server VM by sending requests)
-- API Server (Receives HTTP requests from the frontend VM such as a POST to the /chats endpoint which would represent a user aiming to send a message to another. It writes raw 
-SQL queries to the DB server VM)
-- DB Server (Data storage for the relational PostgreSQL database. For instance, it persistently stores all the "friendships" between users who have accepted each others meet requests. The DB server receives raw SQL queries from the API server VM to request/insert data)
+Front-End User Interface VM
+    Hosts the Vue web application that users access through a web browser. It serves the application's interactive user interface and communicates with the API VM by sending HTTP requests.
+API Server VM
+    Hosts the application's REST API and handles HTTP requests from the Front-End VM. For example, a POST request to the /chats endpoint represents a user sending a message to another user. The API processes these requests and communicates with the DB VM by executing SQL queries to retrieve, insert, update, or delete application data.
+Database Server VM
+    Hosts the application's PostgreSQL relational database and provides persistent storage for application data. For example, it stores the connections between users who have accepted each other's meet requests. The DB VM receives SQL queries from the API VM, executes them against the database, and returns the resulting data to the API VM.
 
 ### Purpose of each provisioning, virtualisation, or packaging tool
 
-- VirtualBox (must install to use) (virtualisation tool that lets you run multiple operating systems on the same computer, needed to boot the frontend, API, and database VM)
-- Vagrant (must install to use) (tool that allows a developer to set up and configure different VMs that are physically booted up by VirtualBox. In this case, it allowed me to specify what packages, and code folders should be stored within each VM as well as the provisioning scripts that would be run by the)
-- Bash Shell (provisioning tool used to provision each VM by installing and configuring required dependencies; for example, installing PostgreSQL on the database VM for persistent data storage.)
-- NPM (packaging tool used in provisioning scripts to install dependencies. For instance, it is used by the API VM to install the Express package)
+VirtualBox — Virtualisation tool
+    Provides the underlying virtualisation platform used to create and run the three Ubuntu VMs: the Front-End VM, API VM, and Database VM. Each VM behaves like a separate computer with its own operating system, network interface, installed software, and filesystem.
+Vagrant — VM configuration and orchestration tool
+    Automates the creation and configuration of the VirtualBox VMs using the Vagrantfile. It specifies properties which are VM names, private IP addresses, synced folders, networking, and provisioning commands. This allows another developer to recreate the same three-VM environment consistently without manually configuring each VM.
+Bash — Scripting/shell tool used for provisioning
+    Executes the provisioning commands used to configure the VMs. For example, Bash scripts install dependencies, configure PostgreSQL, install Node.js packages, mount directories, and start the Vue and Express applications. 
+APT (apt) — Operating-system package manager
+    Used during provisioning to download and install system-level packages inside the Ubuntu VMs. For example, apt can install curl, PostgreSQL, and Node.js-related system packages. This is worth mentioning because it is different to NPM: APT installs OS-level software, whereas NPM installs JavaScript packages.
+NPM — JavaScript package manager
+    Installs the JavaScript dependencies required by the Vue frontend and Express API from their respective package.json files. For example, the API VM uses NPM to install Express and PostgreSQL client libraries, while the Front-End VM uses it to install Vue and its supporting packages.
 
 ## Supported host environment, and supported tools
 
@@ -41,7 +50,7 @@ SQL queries to the DB server VM)
 
 ## Startup Command
 
-- Run chmod +x start.sh in Collaborate directory
+- Run chmod +x start.sh in Collaborate directory (Git Bash if on Windows, and any terminal will be able to run the Bash script on macOS/Linux)
 - Run bash -x ./start.sh in target directory to see log output as VMs are being booted up
 
 ## Deployment Verification
