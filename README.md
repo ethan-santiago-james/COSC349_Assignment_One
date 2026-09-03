@@ -13,7 +13,6 @@
 - As a user, I can click the "Chats" screen to see all my friends who I can chat with
 - As a user, I can send messages to my all my friends in the chat section
 - As a user, I can log out of the application
-- Go to the "Functionality to Test" section at the bottom of file to test the application after startup
 
 ### Application Architecture
 
@@ -42,27 +41,28 @@ NPM — JavaScript package manager
 - All Host Operating Systems (VirtualBox, and Vagrant are available for Windows, macOS, and Linux)
 - VirtualBox Version 7.2.14
 - Vagrant 2.4.9
+- Python 3.14.3 (needed for test file)
 - All other appropriate versioned tools are installed with the start.sh script
 
 ## Demonstration Data
 
 - The schema.sql inserts some sample data into the database so that new users can see up to five users to request meeting up with
-- You can login with username 'ethan', and password 'password123'
 
 ## Startup Command
 
-- Run chmod +x start.sh in Collaborate directory (Git Bash if on Windows, and any terminal will be able to run the Bash script on macOS/Linux)
-- Run bash -x ./start.sh in Collaborate directory to see log output as VMs are being booted up (this takes a while to boot up)
+- Run bash -x ./start.sh in project directory to see log output as VMs are being booted up (this takes a while to boot up)
+- Redeployment can be run with same script as vagrant destroy is run before all vagrant up commands
 
 ## Deployment Verification
 
 - vagrant status (runs at the end of start.sh script to verify VMs are running)
-
-
+- python -m pip install pip==26.1.1
+- pip install selenium
+- python selenium_test.py (verifies that a mock user can login, and access the main dashboard as this involves all VMs)
 
 ## Destroy Command
 
-- Run vagrant destroy in Collaborate directory
+- Run vagrant destroy in project directory
 
 ## How to reach application for use
 

@@ -61,7 +61,6 @@ CREATE TABLE Chat (
 -- TEST USERS
 -- =========================================================
 
--- All test users have the password: password123
 -- Passwords below are stored as bcrypt hashes.
 
 INSERT INTO Collaborate_User

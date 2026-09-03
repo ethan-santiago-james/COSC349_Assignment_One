@@ -81,3 +81,6 @@ EOF
 
 # verification that the VMs are running and services are up
 vagrant status
+python -m pip install pip==26.1.1
+pip install selenium
+python selenium_test.py
