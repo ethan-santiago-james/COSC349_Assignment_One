@@ -8,7 +8,7 @@ function logout() { clearSession(); router.push('/'); }
 
 <template>
   <nav class="bottom-nav">
-    <RouterLink to="/dashboard">Peoples</RouterLink>
+    <RouterLink to="/dashboard">People</RouterLink>
     <RouterLink to="/chats">Chats</RouterLink>
     <button class="link-button" @click="logout">Log out</button>
   </nav>
