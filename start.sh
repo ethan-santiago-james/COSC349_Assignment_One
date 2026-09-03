@@ -78,3 +78,6 @@ vagrant ssh db << 'EOF'
   sudo -u postgres psql -c "CREATE DATABASE appdb OWNER appuser;"
   sudo -u postgres psql -d appdb -f /vagrant/DB/schema.sql
 EOF
+
+# verification that the VMs are running and services are up
+vagrant status

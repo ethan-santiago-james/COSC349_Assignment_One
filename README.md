@@ -47,18 +47,17 @@ NPM — JavaScript package manager
 ## Demonstration Data
 
 - The schema.sql inserts some sample data into the database so that new users can see up to five users to request meeting up with
+- You can login with username 'ethan', and password 'password123'
 
 ## Startup Command
 
 - Run chmod +x start.sh in Collaborate directory (Git Bash if on Windows, and any terminal will be able to run the Bash script on macOS/Linux)
-- Run bash -x ./start.sh in target directory to see log output as VMs are being booted up
+- Run bash -x ./start.sh in Collaborate directory to see log output as VMs are being booted up (this takes a while to boot up)
 
 ## Deployment Verification
 
-- vagrant status (check if three virtual machines are running)
-- Access 192.168.56.11:3000 on a web browser, and see if you see a page saying "Collaborate API is Running"
-- Access the web application at 192.168.56.10:5173, and see if you are presented with the Collaborate home page
-- If you can successfully register an account, and login, it means that the database VM is functional
+- vagrant status (runs at the end of start.sh script to verify VMs are running)
+
 
 
 ## Destroy Command
