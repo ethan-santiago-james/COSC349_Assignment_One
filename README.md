@@ -126,9 +126,10 @@ The project is designed to run on host operating systems supported by both Virtu
 
 The environment used to develop and test the project uses:
 
+* **Git** 2.55.0.5
 * **VirtualBox:** 7.2.14
 * **Vagrant:** 2.4.9
-* **Python:** 3.14.3 — required to run the Selenium verification test
+* **Python:** 3.14.6 — required to run the Selenium verification test
 
 Other application dependencies are installed automatically by the `start.sh` script.
 
