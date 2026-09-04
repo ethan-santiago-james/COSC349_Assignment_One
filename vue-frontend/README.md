@@ -1,6 +1,6 @@
 # Collaborate Vue frontend
 
-This is a browser-based Vue 3 version of the Expo/React Native application. It is self-contained and does not alter the Expo project.
+This is a browser-based Vue 3 version of the Expo/React Native application. It is self-contained and does not alter the Expo project. It was generated using the Codex AI agent.
 
 ## Run it
 

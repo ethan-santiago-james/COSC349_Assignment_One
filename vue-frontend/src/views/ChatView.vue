@@ -1,3 +1,9 @@
+<!--
+Initial implementation generated with OpenAI Codex.
+Reviewed and modified by Ethan James, including changes to
+message styling and sender identification.
+-->
+
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'; import { useRoute } from 'vue-router'; import { api, type Message } from '../services/api'; import { getUsername } from '../services/session';
 const route = useRoute(); const otherUser = String(route.params.username); const messages = ref<Message[]>([]); const message = ref(''); const loading = ref(true); const error = ref(''); let timer: number | undefined;

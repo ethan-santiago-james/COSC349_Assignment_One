@@ -3,6 +3,11 @@
 Install Selenium with ``python -m pip install selenium`` and run this file with
 ``python selenium_test.py``. Chrome and the Collaborate VMs must be running.
 """
+# <!--
+# Initial implementation generated with OpenAI Codex.
+# Reviewed and modified by Ethan James, including changes to
+# message styling and sender identification.
+# -->
 
 import os
 import unittest

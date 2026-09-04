@@ -1,3 +1,8 @@
+<!--
+Initial implementation generated with OpenAI Codex.
+Reviewed and modified by Ethan James, including changes to
+message styling and sender identification.
+-->
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'; import { api, type MeetRequest, type User } from '../services/api'; import { getUsername } from '../services/session'; import AppNav from '../components/AppNav.vue';
 const username = getUsername(); const users = ref<User[]>([]); const requests = ref<MeetRequest[]>([]); const requested = ref(new Set<string>()); const showRequests = ref(false); const error = ref('');

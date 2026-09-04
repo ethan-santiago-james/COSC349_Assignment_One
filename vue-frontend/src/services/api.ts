@@ -1,4 +1,10 @@
+
+// Initial implementation generated with OpenAI Codex.
+// Reviewed and modified by Ethan James, including changes to
+// message styling and sender identification.
+
 const baseUrl = import.meta.env.VITE_API_BASE_URL ?? 'http://192.168.56.11:3000';
+
 
 export type User = { username: string; first_name: string; last_name: string };
 export type MeetRequest = { sender: string; receiver: string; Time_Of_Send: string; Status: string };

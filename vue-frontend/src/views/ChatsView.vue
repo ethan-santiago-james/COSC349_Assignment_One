@@ -1,3 +1,9 @@
+<!--
+Initial implementation generated with OpenAI Codex.
+Reviewed and modified by Ethan James, including changes to
+message styling and sender identification.
+-->
+
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'; import { api, type User } from '../services/api'; import { getUsername } from '../services/session'; import AppNav from '../components/AppNav.vue';
 const connections = ref<User[]>([]); const loading = ref(true); const error = ref('');

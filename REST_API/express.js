@@ -13,7 +13,7 @@ const allowedOrigins = (process.env.FRONTEND_ORIGINS ??
 
 app.use(cors({
     origin(origin, callback) {
-        // Requests without an Origin header (for example curl) remain available for API checks.
+        
         if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
         return callback(new Error(`Origin ${origin} is not allowed by CORS`));
     },

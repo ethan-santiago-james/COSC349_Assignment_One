@@ -1,3 +1,8 @@
+<!--
+Initial implementation generated with OpenAI Codex.
+Reviewed and modified by Ethan James, including changes to
+message styling and sender identification.
+-->
 <template>
   <section class="center-page">
     <div class="welcome-card">
