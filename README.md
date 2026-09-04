@@ -126,14 +126,17 @@ The project is designed to run on host operating systems supported by both Virtu
 
 The environment used to develop and test the project uses:
 
-* **Git** 2.55.0.5
-* **VirtualBox:** 7.2.14
-* **Vagrant:** 2.4.9
-* **Python:** 3.14.6 — required to run the Selenium verification test
+* **Git** 2.55.0.5 (install from here https://git-scm.com/install/windows)
+* **VirtualBox:** 7.2.14 (Look for your OS version at https://www.virtualbox.org/wiki/Downloads under "VirtualBox Platform Packages")
+* **Vagrant:** 2.4.9 (Install from https://developer.hashicorp.com/vagrant/install, go to the "How do I know my computer processors architecture" section to determine if AMD64 or ARM64 version of Vagrant should be installed on your computer)
+* **Python:** 3.14.7 — Download from https://www.python.org/downloads/release/python-3147/, and verify installation by typing "python --version" on Git Bash, and it should output "Python 3.14.7"
 
 Other application dependencies are installed automatically by the `start.sh` script.
 
 ---
+# How do I know my computers processor architecture
+
+Press the Windows Key, type cmd, and open the Command Prompt.Type echo %PROCESSOR_ARCHITECTURE% and press Enter.An output of AMD64 means an x64/Intel/AMD chip, while ARM64 means an ARM chip.
 
 # Demonstration Data
 
