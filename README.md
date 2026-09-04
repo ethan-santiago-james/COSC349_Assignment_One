@@ -132,6 +132,8 @@ The `-x` option displays the commands being executed by the script, making it ea
 
 > **Also Note:** The initial deployment may take several minutes because the virtual machines must be created and their required software and dependencies installed. 
 
+> **Also Note:** To log into multiple accounts at once, you need to use separate browser. This is because the logged in user variable is cached in browser storage.
+
 The startup script creates and configures all three VMs and launches the required application services.
 
 ---
